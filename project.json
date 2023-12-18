@@ -1,0 +1,20 @@
+{
+    "Name": "ping-pong-service",
+    "Author": "Adam Zhou",
+    "Email": "adamzhouisnothing@gmail.com",
+    "Year": "2023",
+    "Description": "Dialogue Generator Service",
+    "License": [
+        "Apache Software License 2.0",
+        "MIT",
+        "GNU GPL v3.0"
+    ],
+
+    "RepoBase": "github.com",
+    "RepoGroup": "amazingchow",
+    "RepoName": "ping-pong-service",
+    "ServiceName": "ping-pong-service",
+    "ServiceNameInUnderScoreCase": "ping_pong_service",
+    "ServiceNameInCamelCase": "PingPongService",
+    "ServicePort": 18888
+}

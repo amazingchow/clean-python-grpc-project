@@ -1,0 +1,7 @@
+{
+    "deployment_env": "prod",
+    "service_name": "{{ServiceName}}",
+    "service_host": "0.0.0.0",
+    "service_port": {{ServicePort}},
+	"log_level": "debug"
+}

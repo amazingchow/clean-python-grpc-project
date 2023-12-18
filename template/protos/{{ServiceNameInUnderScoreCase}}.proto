@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package {{ServiceNameInUnderScoreCase}};
+
+message PingRequest {}
+
+message PongResponse {}
+
+/* clang-format off */
+service {{ServiceNameInCamelCase}} {
+  rpc Ping(PingRequest) returns (PongResponse) {}
+}
+/* clang-format on */
