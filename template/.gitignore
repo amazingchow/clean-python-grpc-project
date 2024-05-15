@@ -160,5 +160,10 @@ cython_debug/
 #.idea/
 
 .env
+.env.local
 .env.secret
 .env.shared
+.locks
+.logs
+.persistent
+.shares

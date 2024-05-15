@@ -2,31 +2,37 @@ Your best python gRPC project template to create general gRPC services.
 
 ## Installation
 
-### For linux_amd64/darwin_amd64
-
-```bash
+Only for linux_amd64/darwin_amd64
+```shell
 # install boilr
 curl -sL https://github.com/tmrts/boilr/releases/download/0.3.0/install | bash -s
+mkdir -p ${HOME}/.local
+mv ${HOME}/bin ${HOME}/.local
 # initialize template registry
-${HOME}/bin/boilr init
-# download template
+${HOME}/.local/bin/boilr init
+# download python-grpc-service template
 cd /path/to
 git clone https://github.com/amazingchow/clean-python-grpc-project.git
-# save the template
-${HOME}/bin/boilr template save -f clean-python-grpc-project python-grpc-service-template
+# save the python-grpc-service template
+${HOME}/.local/bin/boilr template save -f clean-python-grpc-project python-grpc-service-template
 # list all templates
-${HOME}/bin/boilr template list
+${HOME}/.local/bin/boilr template list
 ```
 
 ## Quickstart
 
-```bash
+```shell
+# ${RepoBase} is your git repository, ${RepoGroup} is your repository's parent group
 mkdir -p ${HOME}/.${RepoBase}/${RepoGroup}
 cd ${HOME}/.${RepoBase}/${RepoGroup}
-# update project.json to meet your project requirements
-${HOME}/bin/boilr template use python-grpc-service-template ${RepoName}
+# update project.json to meet your project requirements, and ${RepoName} is your repository's name
+${HOME}/.local/bin/boilr template use python-grpc-service-template ${RepoName}
 cd ${HOME}/.${RepoBase}/${RepoGroup}/${RepoName}
-# initialize service runtime environment
+# initialize service environment
+git init
+cp .env.local.example .env.local
+cp .env.secret.example .env.secret
+cp .env.shared.example .env.shared
 python3.8 -m virtualenv venv && source venv/bin/activate && make init
 # do what you want do...
 ```
@@ -35,15 +41,18 @@ python3.8 -m virtualenv venv && source venv/bin/activate && make init
 
 ```text
 .
-├── devops           // where we place the Dockerfile, etc...
-├── etc              // where we place the dev-config file and prod-config file
-├── internal         // where we place the project-related source code
-├── LICENSE          // license file
-├── Makefile         // we use make command to manage the project
-├── protos           // where we place the proto files
-├── requirements.txt // runtime requirements
-├── scripts          // where we place the scripts to build proto files, to test gRPC method, to benchtest gRPC method, etc...
-└── server.py        // main script
+├── devops               // where we place the Dockerfile, etc...
+├── etc                  // where we place the dev-config file and prod-config file
+├── internal             // where we place the project-related source code
+├── protos               // where we place the proto files
+├── scripts              // where we place the scripts to build proto files, to test gRPC method, to benchtest gRPC method, etc...
+├── .dockerignore        // docker ignore file
+├── .gitignore           // git ignore file
+├── docker-compose.yml   // docker compose file
+├── LICENSE              // license file
+├── Makefile             // where we place the make command to manage the projet
+├── requirements.txt     // runtime requirements
+└── server.py            // main script
 ```
 
 ## License

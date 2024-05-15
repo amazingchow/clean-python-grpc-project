@@ -11,6 +11,7 @@ logger_print()
 
 function benchmark_rpc_methods
 {
+    # go install github.com/bojand/ghz/cmd/ghz@latest
     ghz --insecure \
         --async \
         --rps 20 \

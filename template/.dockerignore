@@ -11,5 +11,10 @@ env.bak/
 venv.bak/
 
 .env
+.env.local
 .env.secret
 .env.shared
+.locks
+.logs
+.persistent
+.shares

@@ -12,7 +12,9 @@ logger_print()
 function test_rpc_methods
 {
 
-    grpcurl -rpc-header x-request-id:73338239da584998aca91639651334fa -d @ -plaintext localhost:{{ServicePort}} {{ServiceNameInUnderScoreCase}}.{{ServiceNameInCamelCase}}/Ping << EOM
+    grpcurl \
+        -rpc-header x-request-id:73338239da584998aca91639651334fa -d @ -plaintext \
+        localhost:{{ServicePort}} {{ServiceNameInUnderScoreCase}}.{{ServiceNameInCamelCase}}/Ping << EOM
 {
 }
 EOM
@@ -21,6 +23,8 @@ EOM
 
 function run
 {
+    # go install github.com/fullstorydev/grpcurl/cmd/grpcurl@v1.8.9 for go1.18
+    # go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest for go1.19 or newer
     grpcurl -plaintext localhost:{{ServicePort}} list {{ServiceNameInUnderScoreCase}}.{{ServiceNameInCamelCase}}
     test_rpc_methods
 }

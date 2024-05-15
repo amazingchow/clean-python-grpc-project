@@ -15,5 +15,5 @@ EXPOSE {{ServicePort}}
 CMD [ \
     "python", \
     "/app/server.py", \
-    "--conf=/app/config/{{ServiceNameInUnderScoreCase}}.json" \
+    "--conf=/app/config/{{ServiceName}}.json" \
 ]
