@@ -3,5 +3,8 @@
     "service_name": "{{ServiceName}}",
     "service_host": "0.0.0.0",
     "service_port": {{ServicePort}},
-	"log_level": "debug"
+	"log_level": "debug",
+    "log_printer": "console",
+    "log_printer_filename": "./{{ServiceName}}.log",
+    "enable_reflection": true
 }

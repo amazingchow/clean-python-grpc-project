@@ -30,10 +30,14 @@ lint: ### Improve your code style. (isort, pyflakes, pycodestyle)
 	@echo "Running static code analysis..."
 	@pyflakes ${SRC}
 	@echo "Running code style check..."
-	@pycodestyle ${SRC} --ignore=E131,E402,E501
+	@pycodestyle ${SRC} --ignore=W293,E131,E402,E501
+
+.PHONY: test
+test: ### Run your tests.
+	@python -m unittest discover -s ./tests -p 'test_*.py'
 
 .PHONY: local_run
-local_run: ### Run your service locally.
+local_run: pb-fmt lint ### Run your service locally.
 	@python server.py --conf=./etc/${SERVICE}-dev.json 2>&1 | tee dev.log
 
 IMAGE_VERSION := ${VERSION}-${GIT_HASH}
@@ -47,7 +51,7 @@ check_compose: ### Check the docker-compose configuration.
 	@docker-compose -f "${CURR_DIR}/docker-compose.yml" config
 
 .PHONY: run_compose
-run_compose: ### Run the application with docker-compose.
+run_compose: image check_compose ### Run the application with docker-compose.
 	@mkdir -p ~/.infra-config/${SERVICE}
 	@cp -f ./etc/${SERVICE}-prod.json ~/.infra-config/${SERVICE}/${SERVICE}.json
 	@mkdir -p ${CURR_DIR}/.logs

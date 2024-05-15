@@ -17,7 +17,7 @@ services:
       LOG_LEVEL: debug
       LOG_PRINTER: disk
       LOG_PRINTER_FILENAME: /app/logs/infra-{{ServiceName}}.log
-      LOGURU_SERIALIZE: "true"
+      LOGURU_SERIALIZE: "false"
     volumes:
       - ~/.infra-config/{{ServiceName}}:/app/config
       - ./.logs:/app/logs
