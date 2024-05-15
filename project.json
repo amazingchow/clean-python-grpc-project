@@ -1,9 +1,9 @@
 {
-    "Name": "ping-pong-service",
+    "Name": "turtle-soup-game-service",
     "Author": "Adam Zhou",
     "Email": "adamzhouisnothing@gmail.com",
     "Year": "2023",
-    "Description": "Dialogue Generator Service",
+    "Description": "Turtle Soup Game Service",
     "License": [
         "Apache Software License 2.0",
         "MIT",
@@ -12,9 +12,9 @@
 
     "RepoBase": "github.com",
     "RepoGroup": "amazingchow",
-    "RepoName": "ping-pong-service",
-    "ServiceName": "ping-pong-service",
-    "ServiceNameInUnderScoreCase": "ping_pong_service",
-    "ServiceNameInCamelCase": "PingPongService",
+    "RepoName": "turtle-soup-game-service",
+    "ServiceName": "turtle-soup-game-service",
+    "ServiceNameInUnderScoreCase": "turtle_soup_game_service",
+    "ServiceNameInCamelCase": "TurtleSoupGameService",
     "ServicePort": 18888
 }

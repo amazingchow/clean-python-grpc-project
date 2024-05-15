@@ -29,8 +29,7 @@ cd ${HOME}/.${RepoBase}/${RepoGroup}
 ${HOME}/.local/bin/boilr template use python-grpc-service-template ${RepoName}
 cd ${HOME}/.${RepoBase}/${RepoGroup}/${RepoName}
 # initialize service environment
-git init
-git add . && git commit -am "First commit"
+git init && git add . && git commit -am "First commit"
 touch .env.local .env.secret .env.shared
 python3.8 -m virtualenv venv && source venv/bin/activate && make init
 # do what you want do...
