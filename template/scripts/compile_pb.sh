@@ -3,13 +3,13 @@
 # 遇到执行出错，直接终止脚本的执行
 set -o errexit
 
-logger_print()
+function logger_print
 {
     local prefix="[$(date +%Y/%m/%d\ %H:%M:%S)]"
     echo "${prefix}$@" >&2
 }
 
-run()
+function run
 {
 	src_dir=/app/protos
 	api_dir=/app/internal/proto_gens
