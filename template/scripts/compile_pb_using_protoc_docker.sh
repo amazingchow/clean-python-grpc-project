@@ -17,7 +17,7 @@ function run
 		-v ~/.${code_root}:/app \
 		-u `id -u` \
 		-w /app \
-		proto-tools:libprotoc-3.24.3_python-3.8 sh /app/scripts/compile_pb.sh
+		proto-tools:libprotoc-3.24.3_python-3.8 bash /app/scripts/compile_pb.sh
 }
 
 run $@
